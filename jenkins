@@ -1,0 +1,20 @@
+#!groovy
+// Check maks2 properties
+properties([disableConcurrentBuild()])
+
+pipeline {
+    agent {
+        label 'main'
+        }
+    options {
+        buildDiscarder(logRotator(nomToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("First step") {
+            steps {
+                sh 'ssh root@maks2 \'hostname\''
+            }
+        }
+    }
+}
