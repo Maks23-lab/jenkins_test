@@ -22,7 +22,7 @@ pipeline {
                  }
              }
         }
-        stage("create docker image") {
+        stages("create docker image") {
             steps {
               echo "============== start building image =================="
               dir ('docker/toolbox') {
@@ -30,7 +30,7 @@ pipeline {
                  }
              }
          }
-         stage("docker push") {
+         stages("docker push") {
              steps {
               echo "============== docker push =================="
                  sh '''
