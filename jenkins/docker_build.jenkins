@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo " ============== docker login =================="
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_maks', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
-                    sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://hub.docker.com')
+                    sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW')
                   
                 }
             }
