@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo "============== start building image =================="
                 dir ('docker/toolbox') {
-                        sh 'docker build -t maks2531/toolbox:latest . '
+                        sh 'docker build -t maks2531/maks:latest . '
                 }
             }
         }
