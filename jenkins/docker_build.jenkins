@@ -14,28 +14,29 @@ pipeline {
     stages {
          stage("docker login") {
             steps {
-                echo "============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: '	dockerhub_maks', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+                echo " ============== docker login =================="
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_maks', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                    sh """
                    docker login -u $USERNAME -p $PASSWORD
                    """
                  }
              }
         }
-        stages("create docker image") {
+        stage("create docker image") {
             steps {
-              echo "============== start building image =================="
+              echo " ============== start building image =================="
               dir ('docker/toolbox') {
                         sh 'docker build -t maks2531/maks:latest . '
                  }
              }
          }
-         stages("docker push") {
+         stage("docker push") {
              steps {
-              echo "============== docker push =================="
+              echo " ============== docker push =================="
                  sh '''
                  docker push maks2531/maks:lastest
                  '''
             }
-       }
- }
+        }
+    }
+}
