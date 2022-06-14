@@ -36,5 +36,6 @@ pipeline {
                  sh '''
                  docker push maks2531/maks:lastest
                  '''
-     }
+        }
+    }
 }
