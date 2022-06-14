@@ -19,19 +19,19 @@ pipeline {
                    sh """
                    docker login -u $USERNAME -p $PASSWORD
                    """
-                }
-            }
-       }
-    stage("create docker image") {
-         steps {
+                 }
+             }
+        }
+        stage("create docker image") {
+            steps {
               echo "============== start building image =================="
               dir ('docker/toolbox') {
                         sh 'docker build -t maks2531/maks:latest . '
-                }
-            }
-        }
-    stage("docker push") {
-          steps {
+                 }
+             }
+         }
+         stage("docker push") {
+             steps {
               echo "============== docker push =================="
                  sh '''
                  docker push maks2531/maks:lastest
