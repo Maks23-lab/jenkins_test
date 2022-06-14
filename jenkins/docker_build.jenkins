@@ -10,16 +10,13 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
-        environment {
-        EXAMPLE_CREDS = credentials('dockerhub_maks')
-    }
     }
     stages {
         stage("docker login") {
             steps {
                 echo " ============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: 'dockerhub_maks', usernameVariable: 'EXAMPLE_CREDS_USR', passwordVariable: 'EXAMPLE_CREDS_PSW')]) { 
-                    sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW')
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_maks', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
+                    sh('curl -u $USERNAME -p $PASSWORD')
                   
                 }
             }
