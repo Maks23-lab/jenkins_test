@@ -1,0 +1,26 @@
+echo "=================== Build starter ==================="
+cat <<EOF > index.html
+<html>
+<body dgcolor=black>
+<center>
+<h2><font color=yellow>Hello from Maks</font></h2>
+
+<font color=blue>www.maks.net</font>
+
+</center>
+</body>
+</html>
+EOF
+echo "=================== Build finished ==================="
+
+
+echo "=================== Test starter ==================="
+result='grep "Hello" index.html | wc -l ' 
+echo $result 
+if [ "$result" = "1" ]
+  then echo "Test Passed" 
+else 
+  echo "Test Failed" 
+  exit 1 
+fi
+echo "=================== Test finished ==================="
