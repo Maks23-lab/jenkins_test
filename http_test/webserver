@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+<TITELE>Hello, Welcome to my webpage</TITELE>
+</HEAD>
+<BODY style="background-color:wihte;">
+<p> My name Maksim. I am 25 years old. I am study to DevOps </p>
+<p> It is page test stage to my homework</p>
+<img src="https://i.pinimg.com/564x/b0/9c/98/b09c98ee44d6f20c929ef7f41fed8d30.jpg">
+<br>
+<a href="https://www.instagram.com/max.golev/">Instagram</a>
+</BODY>
+</HTML>
